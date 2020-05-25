@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>This is the {{name}} template</h1>
+            <h3>Today is {{date}}.
+                {{#user}}
+                My name is {{user.username}}.
+                {{/user}}
+            </h3>
+            <ol>
+                {{#profiles}}
+                  <li>
+                    {{name}}, {{city}},
+                    {{#occupation}}
+                        occupation: {{occupation}}
+                    {{/occupation}}
+                  </li>  
+                {{/profiles}}
+            </ol>
+
+            <form method="post" action='/join'>
+                <input type="text" name="name" placeholder="Name"><br/>
+                <input type="text" name="city" placeholder="City"><br/>
+                <input type="text" name="occupation" placeholder="Occupation"><br/>
+                <input type="submit" value="Add Profile">
+            </form>
+        </div>
+        
+    </body>
+</html>
